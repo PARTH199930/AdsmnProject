@@ -1,0 +1,55 @@
+/* OTPPopup.css */
+.otp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, 0.5); /* Blue overlay color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .otp-popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .otp-popup-content {
+    text-align: center;
+    gap: 10px;
+  }
+  .otp-popup-content input{
+    max-width: 27px;
+    height: 2.2em;
+    background-color: #411479;
+    border: aliceblue;
+    color: white;
+    text-align: center;
+    display: flex;
+  }
+  .OTP-GAP{
+    display: flex;
+    gap: 10px;
+  }
+  /* Add any additional styles as needed */
+
+  .OTPButton{
+    display: flex;
+    justify-content: center;
+    /* padding: 17px; */
+    margin-top: 31px;
+  }
+  .OTPButton button{
+    background-color: #E7B463;
+    color: #370080;
+    border-radius: 10px;
+    height: 2em;
+    width: 70%;
+    font-size: small;
+    border: aliceblue;
+  }
+  

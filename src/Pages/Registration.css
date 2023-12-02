@@ -1,0 +1,179 @@
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed, e.g., 'space-around' */
+    align-items: center; /* Align vertically centered */
+    background-color: #411479; /* Black background color */
+   
+    width: 100%; /* Make the container full-width */
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+  }
+/*   
+  .image-container img {
+    max-width: 10%;
+    height: auto;
+    
+  } */
+
+  .left-images {
+    display: flex;
+    flex-direction: row; /* Align images vertically */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 13px;
+  }
+  
+  .left-images img {
+    height: auto;
+
+  }
+  
+  .right-image {
+    margin-left: auto; /* Push the third image to the right */
+  }
+  
+  .right-image img {
+    max-width: 60%;
+    height: auto;
+  }
+  .progress-bar{
+
+    width: 50%;
+  }
+
+  .RegisterElements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .FormInputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    margin: 0px 14px;
+  }
+  
+  .FormInputs input {
+    margin-bottom: 10px;
+    padding: 10px 22px;
+
+    box-sizing: border-box;
+    border-radius: 40px;
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 18px;
+  }
+  
+  .radio-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0px 13px;
+  
+  }
+  .register-text{
+    margin-top: -50px;
+    color:white;
+  }
+  
+
+  
+  .radio-item label {
+    color: white;
+    text-align: justify;
+    font-size: smaller;
+
+  }
+
+  .RegisterButton{
+    border-radius: 10px;
+    font-weight: bold;
+    width: 50%;
+    height: 2em;
+    background-color: #E7B463;
+    font-size: larger;
+    color: #370080;
+    margin: 12px;
+    border: aliceblue;
+  }
+
+  .DetailCone{
+    color: white;
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .GlobalButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 11px;
+  }
+
+  .DisplayForm{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: white;
+  }
+
+  .DisplayForm a{
+    padding: 0.6rem;
+    font-weight: bold;
+  }
+
+  .DisplayForm input{
+    padding: 0.8rem;
+    border-radius: 20px;
+  }
+
+  .DisplayForm select{
+    padding: 0.8rem;
+    border-radius: 20px;
+  }
+
+  .DisplayFormDesign{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MoodsImages img{
+    max-width: 100%;
+    height: auto;
+    width:100px;
+    padding: 0px 10px;
+  }
+  .MoodImgg{
+    padding: 0px 8px;
+  }
+
+  .MoodsImages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 8px;
+  }
+  .Detail2_progress_bar2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 60px;
+  }
+
+  .Detail2_progress_bar2 img{
+    width: 100%;
+    height: auto;
+  }

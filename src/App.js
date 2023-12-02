@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Routes } from "react-router";
+import Home from "./Pages/Home";
+import Registration from "./Pages/Registration";
+import Info from "./Pages/Info";
+import Detail from "./Pages/Detail";
+import backgroundImage from "./images/BG.jpg";
+
 
 function App() {
+  const backgroundImageUrl = `url(${backgroundImage})`;
+
+  const containerStylee = {
+    backgroundImage: backgroundImageUrl,
+    backgroundSize: "cover", 
+    backgroundPosition: "center", 
+    minHeight: "100vh",
+    overflowY: "auto",
+    overflowX: "auto",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={containerStylee}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/detail" element={<Detail />} />
+      </Routes>
     </div>
   );
 }
