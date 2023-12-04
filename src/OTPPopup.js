@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import "./OTPPopup.css";
+
 
 const OTPPopup = ({ onClose }) => {
   const [otp, setOTP] = useState(["", "", "", ""]);
   const hardcodedOTP = "1234";
   const navigate = useNavigate();
+  const inputRefs = useRef([]);
 
   const handleInputChange = (index, value) => {
     // Ensure the value is a single digit
@@ -13,6 +15,11 @@ const OTPPopup = ({ onClose }) => {
       const newOTP = [...otp];
       newOTP[index] = value;
       setOTP(newOTP);
+
+      // Move to the next input field
+      if (index < 3 && value.length === 1) {
+        inputRefs.current[index + 1].focus();
+      }
     }
   };
 
@@ -26,7 +33,10 @@ const OTPPopup = ({ onClose }) => {
       navigate("/Detail");
     } else {
       console.log("Incorrect OTP. Please try again.");
+      alert('Incorrect OTP. Please try again.')
       setOTP(["", "", "", ""]);
+      // Focus on the first input field after incorrect OTP
+      inputRefs.current[0].focus();
     }
   };
 
@@ -45,6 +55,7 @@ const OTPPopup = ({ onClose }) => {
                   onChange={(e) => handleInputChange(index, e.target.value)}
                   className="otp-box"
                   maxLength="1"
+                  ref={(input) => (inputRefs.current[index] = input)}
                 />
               ))}
             </div>

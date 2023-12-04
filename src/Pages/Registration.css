@@ -156,6 +156,8 @@
     width:100px;
     padding: 0px 10px;
   }
+
+
   .MoodImgg{
     padding: 0px 8px;
   }
@@ -177,3 +179,17 @@
     width: 100%;
     height: auto;
   }
+
+  .tag-img-container {
+    text-align: center;
+    cursor: pointer;
+    padding: 0 10px;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+  }
+
+  .tag-img-container:hover,.tag-img-container.Clicked{
+    background-color: #E7B463;
+  }
+  

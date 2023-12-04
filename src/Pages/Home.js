@@ -21,7 +21,7 @@ function Home() {
         A Unique birthday Celebrations for everyone
       </div>
       <div className="Fontclass1">
-        इस birthday, कुछ अच्छा हो जाए कुछ मीठा हो जाए
+        <i>इस birthday, कुछ अच्छा हो जाए कुछ मीठा हो जाए</i>
       </div>
     </div>
   );

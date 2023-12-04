@@ -6,6 +6,7 @@ import Registration from "./Pages/Registration";
 import Info from "./Pages/Info";
 import Detail from "./Pages/Detail";
 import backgroundImage from "./images/BG.jpg";
+import FinalPage from "./Pages/FinalPage";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/info" element={<Info />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/final" element={<FinalPage/>}/>
       </Routes>
     </div>
   );

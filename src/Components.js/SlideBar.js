@@ -11,43 +11,64 @@ import EDM from "../images/EDM.png";
 import Pop from "../images/Pop.png";
 import MAle from "../images/MAle.png";
 import Female from "../images/Female.png";
+import "../Pages/Registration.css";
+import FinalPage from "../Pages/FinalPage";
 
-const SlideBar = ({onSubmit})=> {
+
+const SlideBar = ({ onSubmit }) => {
   const [selectMood, setselectMood] = useState(null);
   const [selectGenre, setselectGenre] = useState(null);
   const [selectGender, setselectGender] = useState(null);
-  const [generatedLyrics, setGeneratedLyrics] = useState('');
+  const [generatedLyrics, setGeneratedLyrics] = useState("");
+ 
 
-  const TagImg = ({ src, alt, plugin,category, onClick }) => {
+
+  const TagImg = ({ src, alt, plugin, category, onClick }) => {
+    const isSelected =
+      (category === "Mood" && selectMood === plugin) ||
+      (category === "Genre" && selectGenre === plugin) ||
+      (category === "Gender" && selectGender === plugin);
     return (
-      <div style={{ textAlign: "center", padding: "0 10px" }} onClick={() => onClick(category, plugin)} >
-        <img src={src} alt={alt} style={{ cursor: "pointer" }} />
+      <div
+        className={`tag-img-container ${isSelected ? "selected" : ""}`}
+        onClick={() => onClick(category, plugin)}
+      >
+        <img src={src} alt={alt} />
       </div>
     );
   };
 
   const handleMood = (plugin) => {
+    {
+        console.log(plugin);
+      }
     setselectMood(plugin);
   };
 
   const handleGenre = (plugin) => {
+    {
+      console.log(plugin);
+    }
     setselectGenre(plugin);
   };
 
   const handleGender = (plugin) => {
+    {
+        console.log(plugin);
+      }
     setselectGender(plugin);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const lyrics = await onSubmit({ selectMood,selectGenre, selectGender });
+    const lyrics = await onSubmit({ selectMood, selectGenre, selectGender });
 
     console.log("Selected Mood:", selectMood);
     console.log("Selected Genre:", selectGenre);
     console.log("Selected Gender:", selectGender);
 
     setGeneratedLyrics(lyrics);
-
+    
   };
 
   return (
@@ -62,7 +83,7 @@ const SlideBar = ({onSubmit})=> {
               borderRadius: "10px 10px 0px 0px",
             }}
           >
-            <a style={{ color: "#36007A",fontWeight:"bold" }}>Mood</a>
+            <a style={{ color: "#36007A", fontWeight: "bold" }}>Mood</a>
           </div>
 
           <div
@@ -119,7 +140,7 @@ const SlideBar = ({onSubmit})=> {
               borderRadius: "10px 10px 0px 0px",
             }}
           >
-            <a style={{ color: "#36007A", fontWeight:"bold" }}>Genre</a>
+            <a style={{ color: "#36007A", fontWeight: "bold" }}>Genre</a>
           </div>
 
           <div
@@ -176,7 +197,9 @@ const SlideBar = ({onSubmit})=> {
               borderRadius: "10px 10px 0px 0px",
             }}
           >
-            <a style={{ color: "#36007A", fontWeight:"bold" }}>Singer's Voice</a>
+            <a style={{ color: "#36007A", fontWeight: "bold" }}>
+              Singer's Voice
+            </a>
           </div>
 
           <div
@@ -211,12 +234,13 @@ const SlideBar = ({onSubmit})=> {
 
       {generatedLyrics && (
         <div>
-          <h2>Generated Lyrics:</h2>
-          <p>{generatedLyrics}</p>
-        </div>
+          {generatedLyrics}
+        </div> 
       )}
+
+      
     </>
   );
-}
+};
 
 export default SlideBar;
